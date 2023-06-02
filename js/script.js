@@ -58,16 +58,17 @@ function work(pr, t) {
   } else {
     response.textContent = text;
   }
+  
 
   switch (pr) {
     case "+":
-      field.textContent = numberOne + numberTwo;
+      field.textContent = BigInt(numberOne + numberTwo);
       break;
     case "-":
-      field.textContent = numberOne - numberTwo;
+      field.textContent = (numberOne - numberTwo).toString(2);
       break;
     case "*":
-      field.textContent = numberOne * numberTwo;
+      field.textContent = BigInt(numberOne * numberTwo);
       break;
     case "/":
       field.textContent = numberOne / numberTwo;

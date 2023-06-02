@@ -10,23 +10,26 @@
 
 body {
   font-family: 'Space Grotesk', sans-serif;
-  background-color: #bababa;
 }
 
-.container {
+.header {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 30px;
+  background-image: url('/img/photo.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .calc {
-  width: 400px;
-  height: 500px;
-  padding: 10px;
+  width: 300px;
+  height: 450px;
+  padding: 8px;
   border-radius: 40px;
-  background-color: #020202;
+  background-color: #252527;
 }
 
 .calc-top {
@@ -48,12 +51,13 @@ body {
 
 .calc__text {
   height: 100%;
-  background-color: #bab7b7;
+  background-color: #ffffff;
   resize: none;
-  font-size: 30px;
+  font-size: 40px;
   pointer-events: none;
   text-align: end;
-  padding: 30px;
+  padding-top:12.5%;
+  padding-right: 10px;
   overflow: hidden;
   border: 0;
   position: relative;
@@ -73,19 +77,22 @@ body {
   border: 0;
   cursor: pointer;
   border-radius: 7px;
+  background-color: inherit;
+  color: #fff;
   transition: 0.6s;
-  background-color: #bab7b7;
   font-size: 30px;
   border-radius: 30px;
 }
 
 .calc-buttons__item:hover {
-  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
-    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
-    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
-    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
-    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  background-color:#fff;
+  color: #000;
   transition: 0.6s;
+}
+
+.calc-buttons--c:hover {
+  background-color: #ff0101;
+  color: #fff;
 }
 
 .calc-buttons--still {
