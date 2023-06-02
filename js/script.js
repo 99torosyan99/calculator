@@ -44,7 +44,7 @@ function work(pr, t) {
   const numberTwo = Number(
     text.slice(text.lastIndexOf(pr) + 1, text.length - 1)
   );
-
+console.log({numberOne,numberTwo})
   response.style.cssText = `
   font-size:20px;
   top:0
@@ -62,19 +62,24 @@ function work(pr, t) {
 
   switch (pr) {
     case "+":
-      field.textContent = BigInt(numberOne + numberTwo);
+      field.textContent = numberOne + numberTwo;
       break;
     case "-":
-      field.textContent = (numberOne - numberTwo).toString(2);
+      field.textContent = (numberOne - numberTwo).toFixed(2);
       break;
     case "*":
-      field.textContent = BigInt(numberOne * numberTwo);
+      field.textContent = numberOne * numberTwo;
       break;
     case "/":
       field.textContent = numberOne / numberTwo;
       break;
     default:
       break;
+  }
+
+  if( field.textContent.includes('.')) {
+    const text = +field.textContent
+    field.textContent = text.toFixed(2)
   }
 }
 
@@ -96,7 +101,6 @@ function check() {
 
   const val = text.slice(0, text.lastIndexOf(prop));
   if (search(text.slice(0, text.lastIndexOf(prop) - 1))[0]) {
-    console.log('1')
     work(search(val)[1], val.concat("="));
     field.textContent += prop;
   }
